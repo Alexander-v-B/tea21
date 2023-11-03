@@ -21,7 +21,8 @@ const int rodata = 42;
 auto main(int argc, char **argv) -> int
 {
    // .stack segment
-    int stack = 12;
+    int stack;
+    int stack2 = 12;
 
    // output lines
     fmt::print("Value of variable foo {}, address of variable foo {}\n", foo, fmt::ptr(&foo));
@@ -29,5 +30,6 @@ auto main(int argc, char **argv) -> int
     fmt::print("Value of variable data {}, address of variable data {}\n", data, fmt::ptr(&data));
     fmt::print("Value of variable rodata {}, address of variable rodata {}\n", rodata, fmt::ptr(&rodata));
     fmt::print("Value of variable stack {}, address of variable stack {}\n", stack, fmt::ptr(&stack));
+    fmt::print("Value of variable stack2 {}, address of variable stack2 {}\n", stack2, fmt::ptr(&stack2));
     return 0; /* exit gracefully*/
 }
