@@ -21,6 +21,7 @@ const int rodata = 42;
 auto main(int argc, char **argv) -> int
 {
    
+   // output lines
     fmt::print("Value of variable foo {}, address of variable foo {}\n", foo, fmt::ptr(&foo));
     fmt::print("Value of variable bss {}, address of variable bss {}\n", bss, fmt::ptr(&bss));
     fmt::print("Value of variable data {}, address of variable data {}\n", data, fmt::ptr(&data));
