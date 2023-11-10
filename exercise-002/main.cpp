@@ -9,7 +9,7 @@ void printVec(std::vector<int> vec){
 
     fmt::print("----------------\n");
     for (int &num : vec){
-        fmt::print("{}\n", num);
+        fmt::print("{}, ", num);
     }
 
 }
@@ -18,13 +18,17 @@ void sortVec(std::vector<int> vec, int count){
 
     auto start = std::chrono::system_clock::now();
 
-    for (int i = 0; i < count; i++){
+    /**
+     * for (int i = 0; i < count; i++){
         for (int j = 1; j < count; j++){
             if(vec.at(j) < vec.at(j - 1)){
                 std::swap(vec[j], vec[j-1]);
             }
         }
-    }
+    } 
+    */
+
+    std::sort(vec.begin(), vec.end());
 
     auto end = std::chrono::system_clock::now();
 
