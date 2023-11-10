@@ -63,6 +63,8 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Count value: {}!\n", count);
 
+    std::srand(time(NULL));
+
     std::vector<int> vec(count);
     for (int &num : vec){
         /**
