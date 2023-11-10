@@ -4,6 +4,14 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+void printVec(std::vector<int> vec){
+
+    for (int &num : vec){
+        fmt::print("{}\n", num);
+    }
+
+}
+
 auto main(int argc, char **argv) -> int
 {
     /**
@@ -42,6 +50,7 @@ auto main(int argc, char **argv) -> int
         num = std::rand() % 100  + 1;
     }
 
+    printVec(vec);
     /* INSERT YOUR CODE HERE */
 
     return 0; /* exit gracefully*/
