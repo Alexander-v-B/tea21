@@ -32,7 +32,7 @@ void sortVec(std::vector<int> vec, int count){
 
     auto end = std::chrono::system_clock::now();
 
-    auto elapse = std::chrono::duration_cast<std::chrono::milliseconds> (end - start);
+    auto elapse = std::chrono::duration_cast<std::chrono::nanoseconds> (end - start);
     fmt::print("Verstrichene Zeit {}\n", elapse);
 
     printVec(vec);
