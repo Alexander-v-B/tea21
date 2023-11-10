@@ -32,7 +32,7 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", app.get_name());
 
-    std::vector vec(count);
+    std::vector<int> vec(count);
     for (int &num : vec){
         /**
          * rand liefert Werte zwischen 0 und maximum
