@@ -94,12 +94,20 @@ bool LinkedList::remove(LinkedListNode *node)
   bool ret = false;
   
   auto tmp = m_head;
+  /*
+  
+    bis eins vor das node Element...
+    sobald der Nachfolger node ist stoppt es
+    in tmp steht dann das before element
+  
+  */
   while(tmp->pNext != node){
 
     tmp = tmp->pNext;
 
   }
 
+  //before bekommt den nachfolger von node als eigenen nachfolger
   tmp->pNext = node->pNext;
 
   /*
