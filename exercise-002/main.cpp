@@ -1,5 +1,6 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
+#include <std::vector.h>
 
 #include "CLI/CLI.hpp"
 #include "config.h"
@@ -31,6 +32,16 @@ auto main(int argc, char **argv) -> int
      * More info at https://fmt.dev/latest/api.html
      */
     fmt::print("Hello, {}!\n", app.get_name());
+
+    std::vector vec(count);
+    for (int &num : vec){
+        /**
+         * rand liefert Werte zwischen 0 und maximum
+         * module 100 schränkt es auf Werte von 0 bis 99
+         * + 1 verschiebt es auf 1 bis 100
+        */
+        num = std::rand() % 100  + 1;
+    }
 
     /* INSERT YOUR CODE HERE */
 
