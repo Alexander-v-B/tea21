@@ -16,6 +16,8 @@ void printVec(std::vector<int> vec){
 
 void sortVec(std::vector<int> vec, int count){
 
+    auto start = std::chrono::system_clock::now();
+
     for (int i = 0; i < count; i++){
         for (int j = 1; j < count; j++){
             if(vec.at(j) < vec.at(j - 1)){
@@ -23,6 +25,11 @@ void sortVec(std::vector<int> vec, int count){
             }
         }
     }
+
+    auto end = std::chrono::system_clock::now();
+
+    auto elapse = std::chrono::duration_cast<std::chrono::milliseconds> (end - start);
+    fmt::print("Verstrichene Zeit {}\n", elapse);
 
     printVec(vec);
 
