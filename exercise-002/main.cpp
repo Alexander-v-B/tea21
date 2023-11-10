@@ -11,6 +11,10 @@ auto main(int argc, char **argv) -> int
      * More inpo at https://github.com/CLIUtils/CLI11#usage
      */
     CLI::App app{PROJECT_NAME};
+
+    int count = 20;
+    app.add_option("-c,--count", count, "Count variable");
+
     try
     {
         app.set_version_flag("-V,--version", fmt::format("{} {}", PROJECT_VER, PROJECT_BUILD_DATE));
