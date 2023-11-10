@@ -21,26 +21,37 @@ auto main(int argc, char **argv) -> int
     const std::vector<std::string> names2{"Ulf", "Ole", "Sepp", "Norton", "Kai", "Uschi", "Gert"};
     {
         LinkedList list;
+
         fmt::print("------------------------------\n");
+
         for (auto &name : names)
         {
             auto elem = new LinkedListNode(name);
-            // elem->print();
+                // elem->print();
             list.insert_tail(elem);
         }
+
         list.traverse(printer);
+
         fmt::print("------------------------------\n");
+
         for (auto &name : names2)
         {
             auto elem = new LinkedListNode(name);
-            // elem->print();
+                // elem->print();
             list.insert_head(elem);
         }
+
         fmt::print("------------------------------\n");
+
         list.traverse(printer);
+
         fmt::print("------------------------------\n");
+
         fmt::print("Elements in the list: {}\n", list.size());
+
         fmt::print("------------------------------\n");
+
         list.traverse(printer);
     }         /* this calls the DTOR of the list*/
     return 0; /* exit gracefully*/

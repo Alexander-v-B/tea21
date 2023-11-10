@@ -14,9 +14,15 @@ bool LinkedList::insert_tail(LinkedListNode *node)
   if (nullptr == node) {
     return ret;
   }
-  node->pNext = nullptr;
-  m_tail->pNext = node;
-  m_tail = node;
+
+  if(m_tail == nullptr){
+    m_head = m_tail = node;
+  } else {
+
+    m_tail->pNext = node;
+    m_tail = node;
+
+  }
 
   ret = true;
 
@@ -101,7 +107,7 @@ bool LinkedList::remove(LinkedListNode *node)
     wenn die node das letzte element ist, muss die variable tail angepasst werden
 
   */
-  if(node = m_tail){
+  if(node == m_tail){
     m_tail = tmp;
   }
 
