@@ -7,9 +7,24 @@
 
 void printVec(std::vector<int> vec){
 
+    fmt::print("----------------\n");
     for (int &num : vec){
         fmt::print("{}\n", num);
     }
+
+}
+
+void sortVec(std::vector<int> vec, int count){
+
+    for (int i = 0; i < count; i++){
+        for (int j = 1; j < count; j++){
+            if(vec.at(j) < vec.at(j - 1)){
+                std::swap(vec[j], vec[j-1]);
+            }
+        }
+    }
+
+    printVec(vec);
 
 }
 
@@ -48,6 +63,7 @@ auto main(int argc, char **argv) -> int
     }
 
     printVec(vec);
+    sortVec(vec, count);
     /* INSERT YOUR CODE HERE */
 
     return 0; /* exit gracefully*/
