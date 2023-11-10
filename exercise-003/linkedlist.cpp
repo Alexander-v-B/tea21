@@ -14,7 +14,12 @@ bool LinkedList::insert_tail(LinkedListNode *node)
   if (nullptr == node) {
     return ret;
   }
-  // insert your code here....
+  node->pNext = nullptr;
+  m_tail->pNext = node;
+  m_tail = node;
+
+  ret = true;
+
   return ret;
 }
 
@@ -24,7 +29,12 @@ bool LinkedList::insert_head(LinkedListNode *node)
   if (nullptr == node) {
     return ret;
   }
-  // insert your code here....
+  
+  node->pNext = m_head;
+  m_head = node;
+
+  ret = true;
+
   return ret;
 }
 
@@ -34,7 +44,12 @@ bool LinkedList::insert_after(LinkedListNode *loc, LinkedListNode *node)
   if ((nullptr == loc) || (nullptr == node)) {
     return ret;
   }
-  // insert your code here ....
+  
+  node->pNext = loc->pNext;
+  loc->pNext = node;
+
+  ret = true;
+
   return ret;
 }
 
@@ -44,14 +59,54 @@ bool LinkedList::insert_before(LinkedListNode *loc, LinkedListNode *node)
   if ((nullptr == loc) || (nullptr == node)) {
     return ret;
   }
-  // Insert your code here....
+  
+  auto tmp = m_head;
+  /*
+  
+    bis eins vor das loc Element...
+    sobald der Nachfolger loc ist stoppt es
+    in tmp steht dann das before element
+  
+  */
+  while(tmp->pNext != loc){
+
+    tmp = tmp->pNext;
+
+  }
+
+  tmp->pNext = node;
+  node->pNext = loc;
+
+  ret = true;
+
+
   return ret;
 }
 
 bool LinkedList::remove(LinkedListNode *node)
 {
   bool ret = false;
-  // insert your code here ...
+  
+  auto tmp = m_head;
+  while(tmp->pNext != node){
+
+    tmp = tmp->pNext;
+
+  }
+
+  tmp->pNext = node->pNext;
+
+  /*
+  
+    wenn die node das letzte element ist, muss die variable tail angepasst werden
+
+  */
+  if(node = m_tail){
+    m_tail = tmp;
+  }
+
+  ret = true;
+
   return ret;
 }
 
