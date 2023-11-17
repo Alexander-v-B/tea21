@@ -101,23 +101,42 @@ bool LinkedList::remove(LinkedListNode *node)
     in tmp steht dann das before element
   
   */
-  while(tmp->pNext != node){
 
-    tmp = tmp->pNext;
+  if(m_head == nullptr && m_tail == nullptr){
+
+    return false;
 
   }
 
-  //before bekommt den nachfolger von node als eigenen nachfolger
-  tmp->pNext = node->pNext;
+  if(m_head == node){
 
-  /*
+    m_head = node->pNext;
+
+  } else {
+    
+    while(tmp->pNext != node){
+
+      tmp = tmp->pNext;
+
+    }
+
+    //before bekommt den nachfolger von node als eigenen nachfolger
+    tmp->pNext = node->pNext;
+    
+    
+    /*
+    
+      wenn die node das letzte element ist, muss die variable tail angepasst werden
+
+    */
+    if(node == m_tail){
+      m_tail = tmp;
+    }
   
-    wenn die node das letzte element ist, muss die variable tail angepasst werden
-
-  */
-  if(node == m_tail){
-    m_tail = tmp;
   }
+
+
+
 
   ret = true;
 
