@@ -3,6 +3,7 @@
 
 #include "CLI/CLI.hpp"
 #include "config.h"
+#include "BMP.h"
 
 auto main(int argc, char **argv) -> int
 {
@@ -28,7 +29,18 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", app.get_name());
 
-    /* INSERT YOUR CODE HERE */
+    
+
+    struct Pixel{
+        uint8_t red;
+        uint8_t green;
+        uint8_t blue;
+        uint8_t gray;
+    };
+
+    BMP bmp = new BMP();
+    bmp.read(DEFAULT_BMP_FILE);
+
 
     return 0; /* exit gracefully*/
 }
