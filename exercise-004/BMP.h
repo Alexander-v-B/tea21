@@ -47,10 +47,14 @@ class BMP{
         uint8_t alpha = 0;
     };
 
+    public:
+    
     BitmapFileHeader m_fileHeader;
     BitmapInfoHeader m_infoHeader;
 
     std::vector<RGBA> pixel_buffer;
+
+    void printImg();
 };
 
 #endif
