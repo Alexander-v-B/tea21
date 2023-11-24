@@ -19,6 +19,6 @@ constexpr auto PROJECT_BUILD_DATE {"@BUILD_DATE@"};
 // https://en.cppreference.com/w/cpp/language/string_literal
 // Everything between `R"???(` and `)???"` is not escaped
 // I used the sequence `???` as a delimeter cause `?` is not an valid character for a filename in both Linux and windows
-constexpr auto DEFAULT_BMP_FILE {R"???(@DEFAULT_BMP_FILE@)???"};
+constexpr auto DEFAULT_BMP_FILE {R"???(/workspace/tea21/build/exercise-004/input.bmp)???"};
 
 #endif // CONFIG_H_IN
